@@ -86,6 +86,13 @@ status = "✅ Exclusive (opt-in), as a second card"
 tested_on = ["USB adapter, `35bc:0108`, NixOS 26.05 (kernel 7.2.9)"]
 
 [[card]]
+name = "Qualcomm Atheros AR9287"
+driver = "ath9k"
+ids = ["168c:002e"]
+status = "✅ Shared (opt-in)"
+tested_on = []
+
+[[card]]
 name = "Intel 9260"
 driver = "iwlwifi"
 ids = ["8086:2526"]

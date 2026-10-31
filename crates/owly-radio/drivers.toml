@@ -172,6 +172,12 @@ issues = [
 ]
 notes = "Realtek RTL8188FTV (USB, 0bda:f179, kernel 6.14). No ad-hoc mode: runs a hidden AP. A 2.6 MB photo from an iPhone on channel 6 at 32 to 35 kB/s. Sending to the phone is untested: that machine had no Bluetooth for the BLE wake-up."
 
+[drivers.ath9k]
+status = "untested"
+mode = "shared"
+reconnect_after_monitor = true
+notes = "Qualcomm Atheros AR9287 (Acer Aspire 4750, 168c:002e, kernel 7.0). 2.4 GHz only, so shared mode needs an AP on channel 6. Both directions on channel 6, sending with a USB Bluetooth dongle for the BLE wake-up. Wi-Fi stayed up during the session and for the five minutes watched after teardown, with the reconnect. Whether reconnect is needed is untested."
+
 [drivers.ath11k_pci]
 status = "broken"
 mode = "shared"
