@@ -897,8 +897,11 @@ no answer yet for icmp_seq=5
     fn a_config_that_cant_be_read_is_no_config() {
         assert_eq!(nm_config(Path::new("/nonexistent/NetworkManager")), None);
         assert_eq!(nm_config(Path::new("/bin/sh")), None);
-        let echoed = nm_config(Path::new("/bin/echo"));
-        assert_eq!(echoed.as_deref(), Some("--print-config\n"));
+        // NixOS has no /bin/echo, only /bin/sh.
+        if Path::new("/bin/echo").exists() {
+            let echoed = nm_config(Path::new("/bin/echo"));
+            assert_eq!(echoed.as_deref(), Some("--print-config\n"));
+        }
     }
 
     #[test]
