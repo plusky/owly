@@ -44,7 +44,7 @@ tested_on = ["Crosshair VII Hero, `10ec:b822`, NixOS 26.11 (kernel 7.2.9)"]
 name = "Realtek RTL8851BE"
 driver = "rtw89_8851be"
 ids = ["10ec:b851"]
-status = "✅ Shared (opt-in)"
+status = "✅ Shared"
 tested_on = []
 
 [[card]]
