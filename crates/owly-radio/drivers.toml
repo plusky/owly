@@ -137,7 +137,7 @@ issues = [
 notes = "Realtek RTL8821CE (HP laptop, 10ec:c821, kernel 7.2.5)."
 
 [drivers.rtw89_8851be]
-status = "tested"
+status = "untested"
 mode = "shared"
 reconnect_after_monitor = true
 notes = "Realtek RTL8851BE (ASUS Vivobook 14 X1404VA, 10ec:b851, kernel 7.3.0). Both directions on channel 44. Wi-Fi stayed up during the session and for the five minutes watched after teardown, with the reconnect. Whether reconnect is needed is untested."
@@ -164,6 +164,11 @@ status = "untested"
 mode = "exclusive"
 notes = "Realtek RTL8852BU (USB, 35bc:0108, kernel 7.2.9), as a second card beside a connected built-in one. No ad-hoc mode: runs beside a hidden AP. Both directions on channel 149; nothing heard on 44, which that iPhone never used. Ships in USB storage mode (0bda:1a2b) until usb_modeswitch."
 
+[drivers.rtw89_8922ae]
+status = "untested"
+mode = "exclusive"
+notes = "Realtek RTL8922AE (ASUS ProArt B850-CREATOR WIFI NEO, 10ec:8922, kernel 7.3.0), with country IL in radio.toml and the station idle on a machine on Ethernet. No ad-hoc mode: runs a hidden AP. Both directions with an iPhone on channel 44."
+
 [drivers.rtl8xxxu]
 status = "untested"
 mode = "exclusive"
@@ -172,6 +177,12 @@ issues = [
     "This card has only 2.4 GHz, so it runs on channel 6, where an iPhone spends one slot in sixteen: a 2.6 MB photo takes about 75 s.",
 ]
 notes = "Realtek RTL8188FTV (USB, 0bda:f179, kernel 6.14). No ad-hoc mode: runs a hidden AP. A 2.6 MB photo from an iPhone on channel 6 at 32 to 35 kB/s. Sending to the phone is untested: that machine had no Bluetooth for the BLE wake-up."
+
+[drivers.ath9k]
+status = "untested"
+mode = "shared"
+reconnect_after_monitor = true
+notes = "Qualcomm Atheros AR9287 (Acer Aspire 4750, 168c:002e, kernel 7.0). 2.4 GHz only, so shared mode needs an AP on channel 6. Both directions on channel 6, sending with a USB Bluetooth dongle for the BLE wake-up. Wi-Fi stayed up during the session and for the five minutes watched after teardown, with the reconnect. Whether reconnect is needed is untested."
 
 [drivers.ath11k_pci]
 status = "broken"
